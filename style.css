@@ -3,6 +3,7 @@ body {
   font-family: cursive;
   background: #111;
   color: rgb(255, 255, 255);
+  overflow-x: hidden;
 }
 
 .header {
@@ -86,8 +87,7 @@ img {
 }
 
 .rolagem {
-    overflow-y:scroll;
-    height: 1000px;
+    overflow-y: hidden;
 }
 
 button {
