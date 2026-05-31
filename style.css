@@ -1,7 +1,10 @@
 body {
   margin: 0;
   font-family: cursive;
-  background: #111;
+  background-image: url("fundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: rgb(255, 255, 255);
   overflow-x: hidden;
 }
@@ -12,6 +15,8 @@ body {
   background: #1e1e1e;
   position: sticky;
   
+  display:flex;
+  justify-content: center;
 
   top: 0;
   left: 0;
@@ -36,6 +41,20 @@ header h1 {
     margin:20px;
     margin-left:5px;
     cursor: pointer;
+}
+
+.noscontate {
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    top: 3.5%;
+    left: 85%;
+    font-size: 25px;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
 }
 
 main {
@@ -85,6 +104,17 @@ img {
     width:200px;
     border-radius:10px;
 }
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+}
+
+
 
 .rolagem {
     overflow-y: hidden;
@@ -148,4 +178,12 @@ button:hover {
     height: 50px;
     border-radius:25px;
     background: #1e1e1e;
+}
+
+.info {
+    padding: 25px;
+    width: 94%;
+    height: 75%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }

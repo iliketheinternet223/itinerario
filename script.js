@@ -1,59 +1,32 @@
-const botao1 = document.getElementById("dieta1");
-const menu = document.getElementById("Menu1");
+const menus = [1, 2, 3, 4, 5].map(i => ({
+    botao: document.getElementById(`dieta${i}`),
+    menu: document.getElementById(`Menu${i}`)
+}));
 
-botao1.addEventListener("click", () => {
-    menu.classList.toggle("ativo");
-
-    menu4.classList.remove("ativo");
-    menu2.classList.remove("ativo");
-    menu3.classList.remove("ativo");
-    menu5.classList.remove("ativo");
+menus.forEach((item, index) => {
+    item.botao.addEventListener("click", () => {
+        item.menu.classList.toggle("ativo");
+        menus.forEach((m, i) => {
+            if (i !== index) m.menu.classList.remove("ativo");
+        });
+    });
 });
 
-const botao2 = document.getElementById("dieta2");
-const menu2 = document.getElementById("Menu2");
-
-botao2.addEventListener("click", () => {
-    menu2.classList.toggle("ativo");
-
-    menu.classList.remove("ativo");
-    menu4.classList.remove("ativo");
-    menu3.classList.remove("ativo");
-    menu5.classList.remove("ativo");
+const contato = document.getElementById("raparigacarente");
+contato.addEventListener("click", () => {
+    const menuContato = document.getElementById("Menu6");
+    menuContato.classList.toggle("ativo");
+    menus.forEach(m => m.menu.classList.remove("ativo"));
 });
 
-const botao3 = document.getElementById("dieta3");
-const menu3 = document.getElementById("Menu3");
+document.addEventListener("click", (evento) => {
+    const clickmenu = evento.target.closest(".Menu");
+    const clickcontate = evento.target.closest("#raparigacarente");
+    const clickbotao = evento.target.closest(".botão");
 
-botao3.addEventListener("click", () => {
-    menu3.classList.toggle("ativo");
-
-    menu.classList.remove("ativo");
-    menu2.classList.remove("ativo");
-    menu4.classList.remove("ativo");
-    menu5.classList.remove("ativo");
-});
-
-const botao4 = document.getElementById("dieta4");
-const menu4 = document.getElementById("Menu4");
-
-botao4.addEventListener("click", () => {
-    menu4.classList.toggle("ativo");
-
-    menu.classList.remove("ativo");
-    menu2.classList.remove("ativo");
-    menu3.classList.remove("ativo");
-    menu5.classList.remove("ativo");
-});
-
-const botao5 = document.getElementById("dieta5");
-const menu5 = document.getElementById("Menu5");
-
-botao5.addEventListener("click", () => {
-    menu5.classList.toggle("ativo");
-
-    menu.classList.remove("ativo");
-    menu2.classList.remove("ativo");
-    menu3.classList.remove("ativo");
-    menu4.classList.remove("ativo");
+    if (!clickmenu && !clickcontate && !clickbotao) {
+        menus.forEach(m => m.menu.classList.remove("ativo"));
+        const menuContato = document.getElementById("Menu6");
+        menuContato.classList.remove("ativo");
+    }
 });
