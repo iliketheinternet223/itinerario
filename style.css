@@ -57,6 +57,18 @@ header h1 {
     text-decoration: none;
 }
 
+.pesquisa {
+    width: 97.5%;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+    font-size: 18px;
+    background: #202020;
+    color: white;
+    border: none;
+}
+
 main {
   margin: auto;
   padding: 20px;
